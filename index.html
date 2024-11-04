@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Please wait, I'm go to krubeer website is now.</title>
+    <script>
+      var request = new XMLHttpRequest();
+      var url = "https://api.beebotte.com/v1/public/data/read/beerjetsada/Redirect_Web/p_web_gate_1?limit=1&source=raw";
+      request.open('GET', url, true);
+      request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+          window.location.replace(JSON.parse(request.responseText)[0].data);
+        }
+      };
+      request.send();
+    </script>
+  </head>
+  <body></body>
+</html>
